@@ -66,20 +66,21 @@ rules:
   resources:
   - '*'
   - resourcemappings
+  - vmimportconfigs
   verbs:
   - '*'
 - apiGroups:
   - kubevirt.io
   resources:
-  - 'virtualmachines'
-  - 'virtualmachines/finalizers'
-  - 'virtualmachineinstances'
+  - virtualmachines
+  - virtualmachines/finalizers
+  - virtualmachineinstances
   verbs:
   - '*'
 - apiGroups:
   - cdi.kubevirt.io
   resources:
-  - 'datavolumes'
+  - datavolumes
   verbs:
   - '*'
 - apiGroups:
@@ -87,21 +88,21 @@ rules:
   resources:
   - templates
   verbs:
-  - 'get'
+  - get
 - apiGroups:
   - template.openshift.io
   resources:
   - processedtemplates
   verbs:
-  - 'create'
+  - create
 - apiGroups:
-    - storage.k8s.io
+  - storage.k8s.io
   resources:
-    - storageclasses
+  - storageclasses
   verbs:
-    - get
-    - list
-    - watch
+  - get
+  - list
+  - watch
 
 ---
 kind: ClusterRoleBinding
